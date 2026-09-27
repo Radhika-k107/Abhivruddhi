@@ -12,6 +12,7 @@ import Aftermovie from './components/Aftermovie';
 import About from './pages/About';
 // import Team from './pages/Team';
 import Events from './pages/Events';
+import EngineeringUnplugged from './pages/EngineeringUnplugged';
 import Sponsors from './pages/Sponsors';
 import Contact from './pages/Contact';
 
@@ -64,6 +65,7 @@ export default function App() {
         <Route path="/about" element={<About />} />
         {/* <Route path="/team" element={<Team />} /> */}
         <Route path="/events" element={<Events />} />
+        <Route path="/events/engineering-unplugged" element={<EngineeringUnplugged />} />
         <Route path="/sponsors" element={<Sponsors />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>

@@ -268,9 +268,15 @@ const eventVisuals = [
 ];
 
 function FeaturedEventCard({ event, index, reverse }) {
+  const navigate = useNavigate();
   const [hovered, setHovered] = useState(false);
   const [ref, vis] = useInView(0.1);
   const Visual = eventVisuals[index];
+  const handleExplore = () => {
+    if (event.title === 'Engineering Unplugged') {
+      navigate('/events/engineering-unplugged');
+    }
+  };
 
   return (
     <div
@@ -372,6 +378,7 @@ function FeaturedEventCard({ event, index, reverse }) {
 
           <div>
             <button
+              type="button"
               style={{
                 fontFamily: "'Montserrat', sans-serif",
                 fontSize: 12,
@@ -388,6 +395,7 @@ function FeaturedEventCard({ event, index, reverse }) {
                 gap: 8,
                 transition: "background 0.3s ease, color 0.3s ease, border-color 0.3s ease",
               }}
+              onClick={handleExplore}
               onMouseEnter={e => {
                 e.currentTarget.style.background = 'transparent';
                 e.currentTarget.style.color = T.accent;
